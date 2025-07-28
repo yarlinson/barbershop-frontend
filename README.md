@@ -1,102 +1,127 @@
 # Barbershop Frontend
 
-Sistema de gestión de citas para barberías - Frontend en React
+Sistema de gestión de citas para barbería desarrollado con React, TypeScript y Material-UI.
 
-## 🚀 Tecnologías
+## Características Implementadas
 
-- [React 18](https://reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Vite](https://vitejs.dev/)
-- [Redux Toolkit](https://redux-toolkit.js.org/)
-- [Material-UI](https://mui.com/)
-- [React Router](https://reactrouter.com/)
+- 🔐 **Sistema de Autenticación**
+  - Registro de usuarios
+  - Login con JWT
+  - Persistencia de sesión
+  - Protección de rutas por roles
 
-## 📋 Requisitos Previos
+- 🛠️ **Gestión de Servicios**
+  - Listado de servicios disponibles
+  - Detalles de precios y duraciones
+  - Vista responsive y moderna
 
-- Node.js (versión 16 o superior)
-- npm o yarn
-- Git
+## Tecnologías Utilizadas
 
-## 🛠️ Instalación
+- React 18
+- TypeScript
+- Vite
+- Material-UI
+- Redux Toolkit
+- React Router DOM
+- Axios
+
+## Requisitos Previos
+
+- Node.js >= 16
+- npm >= 8
+
+## Instalación
 
 1. Clonar el repositorio:
 ```bash
-git clone git@github.com:yarlinson/barbershop-frontend.git
+git clone <url-del-repositorio>
 cd barbershop-frontend
 ```
 
 2. Instalar dependencias:
 ```bash
 npm install
-# o
-yarn install
 ```
 
 3. Crear archivo .env:
 ```bash
-cp .env.example .env
-```
-
-4. Iniciar servidor de desarrollo:
-```bash
-npm run dev
-# o
-yarn dev
-```
-
-## 📁 Estructura del Proyecto
-
-```
-src/
-├── assets/         # Recursos estáticos (imágenes, etc.)
-├── components/     # Componentes reutilizables
-├── hooks/         # Custom hooks
-├── interfaces/    # TypeScript interfaces
-├── layouts/       # Layouts de la aplicación
-├── pages/         # Páginas/Vistas
-├── routes/        # Configuración de rutas
-├── services/      # Servicios API
-├── store/         # Estado global (Redux)
-└── utils/         # Utilidades y helpers
-```
-
-## 🔍 Scripts Disponibles
-
-- `npm run dev`: Inicia el servidor de desarrollo
-- `npm run build`: Construye la aplicación para producción
-- `npm run preview`: Vista previa de la versión de producción
-- `npm run lint`: Ejecuta el linter
-- `npm run test`: Ejecuta los tests
-
-## 🔐 Variables de Entorno
-
-Crear un archivo `.env` en la raíz del proyecto:
-
-```env
 VITE_API_URL=http://localhost:8000/api
 ```
 
-## 🤝 Contribución
+4. Iniciar el servidor de desarrollo:
+```bash
+npm run dev
+```
 
-1. Fork el proyecto
-2. Crea tu rama de feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+## Estructura del Proyecto
 
-## 📝 Licencia
+```
+src/
+├── components/     # Componentes reutilizables
+├── pages/         # Páginas/Vistas principales
+├── services/      # Servicios de API
+├── store/         # Estado global (Redux)
+├── hooks/         # Custom hooks
+├── layouts/       # Layouts reutilizables
+└── routes/        # Configuración de rutas
+```
 
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+## Scripts Disponibles
 
-## 🔗 Enlaces Relacionados
+- `npm run dev`: Inicia el servidor de desarrollo
+- `npm run build`: Construye la aplicación para producción
+- `npm run lint`: Ejecuta el linter
+- `npm run preview`: Vista previa de la build de producción
 
-- [Backend Repository](https://github.com/yarlinson/barbershop-backend)
-- [Documentación de la API](http://localhost:8000/api/docs/)
+## Desarrollo
 
-## 👥 Autores
+El proyecto utiliza Git Flow para el control de versiones:
 
-- **Yarlinson Matos** - *Desarrollo Inicial* - [yarlinson](https://github.com/yarlinson)
+- `main`: Rama de producción
+- `develop`: Rama de desarrollo
+- `feature/*`: Ramas de características
+- `release/*`: Ramas de release
+- `hotfix/*`: Ramas de correcciones urgentes
 
-## 📞 Soporte
+## Estado Actual
 
-Si tienes alguna pregunta o sugerencia, no dudes en abrir un issue en el repositorio.
+- ✅ Configuración inicial completada
+- ✅ Sistema de autenticación implementado
+- ✅ Protección de rutas por roles
+- ✅ Gestión de servicios básica
+- 🚧 Gestión de barberos (en progreso)
+- 🚧 Sistema de citas (pendiente)
+
+## Próximos Pasos
+
+1. Implementar gestión de barberos
+2. Desarrollar sistema de citas
+3. Agregar panel de administración
+4. Implementar notificaciones
+
+## Contribuir
+
+1. Crear una nueva rama feature desde develop:
+```bash
+git flow feature start nombre-feature
+```
+
+2. Realizar cambios y commit:
+```bash
+git add .
+git commit -m "feat: descripción del cambio"
+```
+
+3. Finalizar feature:
+```bash
+git flow feature finish nombre-feature
+```
+
+4. Subir cambios:
+```bash
+git push origin develop
+```
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT.
