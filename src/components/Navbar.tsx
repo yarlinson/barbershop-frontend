@@ -14,8 +14,9 @@ const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleLogout = () => {
-    dispatch(logout());
-    navigate('/login');
+    handleMenuClose(); // Cerrar el menú primero
+    dispatch(logout()); // Dispatch el logout
+    navigate('/login', { replace: true }); // Usar replace para evitar volver atrás
   };
 
   const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {

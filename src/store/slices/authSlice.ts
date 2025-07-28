@@ -14,24 +14,23 @@ interface AuthState {
   token: string | null;
 }
 
+// Estado inicial por defecto
+const defaultState: AuthState = {
+  isAuthenticated: false,
+  user: null,
+  token: null,
+};
+
 // Recuperar el estado inicial del localStorage
 const loadState = (): AuthState => {
   try {
     const serializedState = localStorage.getItem('authState');
     if (serializedState === null) {
-      return {
-        isAuthenticated: false,
-        user: null,
-        token: null,
-      };
+      return defaultState;
     }
     return JSON.parse(serializedState);
   } catch {
-    return {
-      isAuthenticated: false,
-      user: null,
-      token: null,
-    };
+    return defaultState;
   }
 };
 
@@ -53,11 +52,13 @@ const authSlice = createSlice({
       }));
     },
     logout: (state) => {
-      state.user = null;
-      state.token = null;
-      state.isAuthenticated = false;
-      // Limpiar localStorage
+      // Limpiar localStorage primero
       localStorage.removeItem('authState');
+      
+      // Restablecer el estado a los valores por defecto
+      state.user = defaultState.user;
+      state.token = defaultState.token;
+      state.isAuthenticated = defaultState.isAuthenticated;
     },
   },
 });

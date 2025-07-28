@@ -5,6 +5,7 @@ import Login from '../pages/Login';
 import Register from '../pages/Register';
 import ProtectedRoute from '../components/ProtectedRoute';
 import TestAuth from '../pages/TestAuth';
+import Services from '../pages/Services';
 
 // Rutas públicas y protegidas
 export const router = createBrowserRouter([
@@ -32,6 +33,11 @@ export const router = createBrowserRouter([
       {
         path: '/test-auth',
         element: <TestAuth />,
+      },
+      // Ruta de servicios
+      {
+        path: '/services',
+        element: <Services />,
       },
       // Rutas protegidas para clientes
       {
